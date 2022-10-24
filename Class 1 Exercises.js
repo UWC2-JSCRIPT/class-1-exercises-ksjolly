@@ -47,4 +47,12 @@
 // Look online for documentation on Date objects.
 
 // Starting hint:
-const endDate = new Date(2019, 3, 1);
+const endDate = new Date(2020, 3, 1);
+const startDate = new Date(2020,1,1);
+
+const elapsedTime = endDate.valueOf() - startDate.valueOf();
+const halfway = elapsedTime/2;
+
+const middleTime = endDate.valueOf() - halfway;
+const middleDate = new Date(middleTime).toUTCString();
+console.log(middleDate);
