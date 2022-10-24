@@ -5,11 +5,16 @@
 // 1. Pagliacci charges $16.99 for a 13” pizza and $19.99 for a 17” pizza.
 // What is the area for each of these pizzas?
 // (radius would be the listed size - i.e. 13" - divided by 2)
-
-
+const small = 13;
+const large = 17;
+const area13inch = Math.pi * Math.pow(small/2, 2);
+const area17inch = Math.pi * Math.pow(large/2, 2);
 // 2. What is the cost per square inch of each pizza?
+const smallPrice = 16.99;
+const largePrice = 19.99;
 
-
+const pricepersquareinch13 = smallPrice/area13inch;
+const pricepersqureinch17 = largePrice/area17inch;
 // 3. Using the Math object, put together a code snippet
 // that allows you to draw a random card with a value
 // between 1 and 13 (assume ace is 1, jack is 11…)
@@ -17,6 +22,16 @@
 
 // 4. Draw 3 cards and use Math to determine the highest
 // card
+
+function getRandomInt(max) {
+    return (Math.floor(Math.random() * max)) + 1;
+}
+
+const firstDraw = getRandomInt(12);
+const secondDraw = getRandomInt(12);
+const thirdDraw = getRandomInt(12);
+
+console.log(Math.max(firstDraw,secondDraw,thirdDraw));
 
 
 /**
