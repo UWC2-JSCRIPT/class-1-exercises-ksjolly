@@ -7,14 +7,16 @@
 // (radius would be the listed size - i.e. 13" - divided by 2)
 const small = 13;
 const large = 17;
-const area13inch = Math.pi * Math.pow(small/2, 2);
-const area17inch = Math.pi * Math.pow(large/2, 2);
+const area13inch = Math.PI * Math.pow(small/2, 2);
+const area17inch = Math.PI * Math.pow(large/2, 2);
 // 2. What is the cost per square inch of each pizza?
 const smallPrice = 16.99;
 const largePrice = 19.99;
 
 const pricepersquareinch13 = smallPrice/area13inch;
 const pricepersqureinch17 = largePrice/area17inch;
+console.log('The price per square inch of the 13 inch is ', pricepersquareinch13);
+console.log('The price per square inch of the 17 inch is', pricepersqureinch17);
 // 3. Using the Math object, put together a code snippet
 // that allows you to draw a random card with a value
 // between 1 and 13 (assume ace is 1, jack is 11…)
@@ -23,15 +25,14 @@ const pricepersqureinch17 = largePrice/area17inch;
 // 4. Draw 3 cards and use Math to determine the highest
 // card
 
-function getRandomInt(max) {
-    return (Math.floor(Math.random() * max)) + 1;
-}
 
-const firstDraw = getRandomInt(12);
-const secondDraw = getRandomInt(12);
-const thirdDraw = getRandomInt(12);
+const max = 12; // highest value to select from
+const shift = 1; // range between 1 and 13
+const firstDraw = Math.floor(Math.random() * max) + shift;
+const secondDraw = Math.floor(Math.random() * max) + shift;
+const thirdDraw = Math.floor(Math.random() * max) + shift;
 
-console.log(Math.max(firstDraw,secondDraw,thirdDraw));
+console.log('The highest of the numbers was ', Math.max(firstDraw,secondDraw,thirdDraw));
 
 
 /**
@@ -43,6 +44,15 @@ console.log(Math.max(firstDraw,secondDraw,thirdDraw));
 // this information to create a formatted address block
 // that could be printed onto an envelope.
 
+const firstName = 'Karen';
+const lastName = 'Jolly';
+const streetAddress = '11826 SE 316th Pl';
+const city = 'Auburn';
+const state = 'Washington';
+const zipcode = '98119';
+
+const formattedAddress = firstName + ' ' + lastName + '\n' + streetAddress + '\n' + city + ' ' + state + ' ' + zipcode;
+
 
 // 2. You are given a string in this format:
 // firstName lastName(assume no spaces in either)
@@ -52,7 +62,8 @@ console.log(Math.max(firstDraw,secondDraw,thirdDraw));
 // Write code that is able to extract the first name from this string into a variable.
 // Hint: use indexOf, slice, and / or substring
 
-
+const firstSpace = formattedAddress.indexOf(' ');
+console.log(formattedAddress.substring(0,firstSpace));
 /**
  * FIND THE MIDDLE DATE
  */
